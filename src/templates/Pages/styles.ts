@@ -19,6 +19,7 @@ export const Body = styled.div`
   // body styles
   p {
     font-size: var(--medium);
-    line-height: var(--medium);
+    line-height: var(--large);
+    text-align: center;
   }
 `
