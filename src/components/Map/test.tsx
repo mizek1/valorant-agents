@@ -10,26 +10,26 @@ describe('<Map />', () => {
     ).toBeInTheDocument()
   })
   it('should render with marker in correct place', () => {
-    const place = {
+    const agent = {
       id: '1',
-      name: 'Crato',
-      slug: 'crato',
+      name: 'Sage',
+      slug: 'sage',
       location: {
         latitude: 0,
         longitude: 0
       }
     }
-    const placeTwo = {
+    const agentTwo = {
       id: '2',
-      name: 'Juazeiro',
-      slug: 'juazeiro',
+      name: 'Cypher',
+      slug: 'cypher',
       location: {
         latitude: 1,
         longitude: 1
       }
     }
-    render(<Map places={[place, placeTwo]} />)
-    expect(screen.getByTitle(/crato/i)).toBeInTheDocument()
-    expect(screen.getByTitle(/juazeiro/i)).toBeInTheDocument()
+    render(<Map agents={[agent, agentTwo]} />)
+    expect(screen.getByTitle(/sage/i)).toBeInTheDocument()
+    expect(screen.getByTitle(/cypher/i)).toBeInTheDocument()
   })
 })

@@ -1,16 +1,15 @@
-import { InfoSquare } from '@styled-icons/boxicons-regular'
-import LinkWrapper from 'components/LinkWrapper'
-import dynamic from 'next/dynamic'
+import { MapProps } from 'components/Map'
+import client from 'graphql/client'
+import { GetAgentsQuery } from 'graphql/generated/graphql'
+import { GET_AGENTS } from 'graphql/queries'
+import HomeTemplate from 'templates/Home'
 
-const Map = dynamic(() => import('../components/Map'), { ssr: false })
+export default function Home({ agents }: MapProps) {
+  return <HomeTemplate agents={agents} />
+}
 
-export default function Home() {
-  return (
-    <>
-      <LinkWrapper href="/about">
-        <InfoSquare size={32} aria-label="About" />
-      </LinkWrapper>
-      <Map />
-    </>
-  )
+export const getStaticProps = async () => {
+  const { agents } = await client.request<GetAgentsQuery>(GET_AGENTS)
+
+  return { props: { agents } }
 }

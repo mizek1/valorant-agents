@@ -25,3 +25,30 @@ export const GET_PAGE_BY_SLUG = gql`
     }
   }
 `
+
+export const GET_AGENTS = gql`
+  query getAgents {
+    agents {
+      id
+      slug
+      name
+      biography
+      locationName
+      location {
+        latitude
+        longitude
+      }
+      role
+      picture {
+        url
+        height
+        width
+      }
+      icon {
+        url
+        height
+        width
+      }
+    }
+  }
+`

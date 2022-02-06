@@ -1,6 +1,6 @@
 import { MapContainer, TileLayer, Marker } from 'react-leaflet'
 
-export type Place = {
+export type Agent = {
   id: string
   name: string
   slug: string
@@ -11,10 +11,10 @@ export type Place = {
 }
 
 export type MapProps = {
-  places?: Place[]
+  agents?: Agent[]
 }
 
-const Map = ({ places }: MapProps) => (
+const Map = ({ agents }: MapProps) => (
   <MapContainer
     center={[51.505, -0.09]}
     zoom={3}
@@ -24,7 +24,7 @@ const Map = ({ places }: MapProps) => (
       attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
       url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
     />
-    {places?.map(({ id, name, location }) => {
+    {agents?.map(({ id, name, location }) => {
       const { latitude, longitude } = location
       return (
         <Marker
