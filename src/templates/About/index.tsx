@@ -4,7 +4,7 @@ import * as S from './styles'
 
 const AboutTemplate = () => (
   <S.Content>
-    <LinkWrapper href="/home">
+    <LinkWrapper href="/">
       <WindowClose size={32} aria-label="Close" />
     </LinkWrapper>
     <S.Heading>Valorant Agents</S.Heading>
