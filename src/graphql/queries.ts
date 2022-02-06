@@ -52,3 +52,30 @@ export const GET_AGENTS = gql`
     }
   }
 `
+
+export const GET_AGENT_BY_SLUG = gql`
+  query getAgentBySlug($slug: String!) {
+    agent(where: { slug: $slug }) {
+      id
+      slug
+      name
+      biography
+      locationName
+      location {
+        latitude
+        longitude
+      }
+      role
+      picture {
+        url
+        height
+        width
+      }
+      icon {
+        url
+        height
+        width
+      }
+    }
+  }
+`

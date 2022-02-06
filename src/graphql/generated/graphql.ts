@@ -4233,3 +4233,10 @@ export type GetAgentsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type GetAgentsQuery = { __typename?: 'Query', agents: Array<{ __typename?: 'Agent', id: string, slug: string, name: string, biography: string, locationName: string, role: Role, location: { __typename?: 'Location', latitude: number, longitude: number }, picture: { __typename?: 'Asset', url: string, height?: number | null, width?: number | null }, icon: { __typename?: 'Asset', url: string, height?: number | null, width?: number | null } }> };
+
+export type GetAgentBySlugQueryVariables = Exact<{
+  slug: Scalars['String'];
+}>;
+
+
+export type GetAgentBySlugQuery = { __typename?: 'Query', agent?: { __typename?: 'Agent', id: string, slug: string, name: string, biography: string, locationName: string, role: Role, location: { __typename?: 'Location', latitude: number, longitude: number }, picture: { __typename?: 'Asset', url: string, height?: number | null, width?: number | null }, icon: { __typename?: 'Asset', url: string, height?: number | null, width?: number | null } } | null };

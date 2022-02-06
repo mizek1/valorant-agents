@@ -17,6 +17,9 @@ describe('<Map />', () => {
       location: {
         latitude: 0,
         longitude: 0
+      },
+      icon: {
+        url: '/test'
       }
     }
     const agentTwo = {
@@ -26,6 +29,9 @@ describe('<Map />', () => {
       location: {
         latitude: 1,
         longitude: 1
+      },
+      icon: {
+        url: '/test'
       }
     }
     render(<Map agents={[agent, agentTwo]} />)
